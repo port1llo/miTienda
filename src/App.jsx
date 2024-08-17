@@ -1,6 +1,6 @@
 
 import './App.css'
-import Navbar from './components/NavBar';"./components/Navbar";
+import Navbar from './components/Navbar.jsx';
 function App() {
   const title = "Lengua de Suegra";
   return (
