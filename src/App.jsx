@@ -1,13 +1,16 @@
 
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx";
 import './App.css'
-import Navbar from './components/Navbar.jsx';
+import Navbar from './components/Navbar/Navbar.jsx';
+import { categories } from "./components/mock/mockData.js";
 function App() {
   const title = "Lengua de Suegra";
   return (
     <>
-      <Navbar />
-      <h1>titulo {title}</h1>;
-     
+      
+      <ItemListContainer title={title}/>
+      <Navbar categories ={categories} title="logo"/>
+      
     </>
   )
 }
