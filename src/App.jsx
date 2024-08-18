@@ -7,12 +7,10 @@ function App() {
   const title = "Lengua de Suegra";
   return (
     <>
-      
+       <Navbar categories ={categories} title="logo"/>
       <ItemListContainer title={title}/>
-      <Navbar categories ={categories} title="logo"/>
-      
     </>
-  )
+  );
 }
 
 export default App

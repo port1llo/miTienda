@@ -1,13 +1,20 @@
 import Item from "../Item/Item";
 import styles from "./ItemList.module.css"
-const ItemList = () => {
+
+const ItemList = ({products}) => {
+
+
+
     return (
     <>
     <div className= {styles.container}>
     <div  >
         ItemList
     </div>
-     <Item/>
+    {products.map((product) => {
+        return <Item key={product.id} product={product}/>;
+    })}
+     
      </div>   
      </> 
 )};

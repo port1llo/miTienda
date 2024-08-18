@@ -9,7 +9,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["interior","invierno"],
-    image: "@",
+    /*image: "#",*/
 },
 
 {
@@ -19,7 +19,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["interior"],
-    image: "@",
+   /*image: "#",*/
 },
 {
     id: 3,
@@ -28,7 +28,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["interior","verano"],
-    image: "@",
+   /*image: "#",*/
 },
 {
     id: 4,
@@ -37,7 +37,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["interior"],
-    image: "@",
+    /*image: "#",*/
 },
 {
     id: 5,
@@ -46,7 +46,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["exterior","verano"],
-    image: "@",
+    /*image: "#",*/
 },
 {
     id: 6,
@@ -55,7 +55,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["exterior","verano"],
-    image: "@",
+  /*image: "#",*/
 },
 {
     id: 7,
@@ -64,6 +64,6 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["exterior","invierno"],
-    image: "@",
+  /*image: "#",*/
 },
 ];
