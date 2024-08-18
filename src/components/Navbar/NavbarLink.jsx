@@ -1,9 +1,9 @@
-
+import { NavLink } from "react-router-dom";
 
 const Navbarlink = ({category}) => {
     return (
-      <a href="#" className="navItem">{category}
-      </a>
+      <NavLink to={`/${category}`} className="navItem">{category}
+      </NavLink>
     );
 };  
 export default Navbarlink;

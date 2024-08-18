@@ -2,7 +2,9 @@ import Cartwidget from "../CartWidget/Cartwidget";
 import "./Navbar.css";
 import Navbarlink from "./NavbarLink";
 import logo from "../../assets/logo.png"
-const Navbar = ({categories, title}) => {
+import { categories } from "../mock/mockData";
+
+const Navbar = ({ title}) => {
 
   
     return(
