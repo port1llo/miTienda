@@ -7,7 +7,7 @@ function App() {
   const title = "Lengua de Suegra";
   return (
     <>
-       <Navbar categories ={categories} title="logo"/>
+       <Navbar categories ={categories} title="Lengua de Suegra"/>
       <ItemListContainer title={title}/>
     </>
   );
