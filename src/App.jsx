@@ -1,7 +1,7 @@
 
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx";
 import './App.css'
-import Layout from "./components/PAges/Layout.jsx";
+import Layout from "./components/pages/Layout.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
@@ -16,12 +16,10 @@ function App() {
       <Layout>
           <Routes>
               <Route path="/" element={<ItemListContainer title={title}/>}/>  
-              <Route path="/home" element={<ItemListContainer title={title}/>}/>
+              <Route path="/vivero/:categoryId" element={<ItemListContainer title={title}/>}/>
               <Route path="/contact" element={<Contact/>}/>
               <Route path="/about" element={<AboutUs/>}/>
-              <Route path="*" element={<Error404/>}/>
-              
-              
+              <Route path="*" element={<Error404/>}/>              
           </Routes>  
       </Layout>  
       </BrowserRouter>

@@ -7,7 +7,7 @@ const ItemList = ({products}) => {
 
     return (
     <>
-    <div className= {styles.container}>
+    <div className= {`${styles.container} d-flex`}>
     <div  >
         ItemList
     </div>
