@@ -1,5 +1,5 @@
 export const categories = [ 
-    "home","interior", "exterior", "invierno", "verano", "contact", "about" ];
+    "interior", "exterior", "invierno", "verano"];
 
 export const items = [
 {

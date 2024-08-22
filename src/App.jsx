@@ -6,6 +6,8 @@ import Contact from "./components/Contact/Contact.jsx";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Error404 from "./components/Error404/Error404.jsx";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.jsx";
+
 
 function App() {
   const title = "Lengua de Suegra";
@@ -17,6 +19,7 @@ function App() {
           <Routes>
               <Route path="/" element={<ItemListContainer title={title}/>}/>  
               <Route path="/vivero/:categoryId" element={<ItemListContainer title={title}/>}/>
+              <Route path="/product/:id" element={<ItemDetailContainer/>}/>
               <Route path="/contact" element={<Contact/>}/>
               <Route path="/about" element={<AboutUs/>}/>
               <Route path="*" element={<Error404/>}/>              
