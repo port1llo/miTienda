@@ -10,17 +10,17 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
     
     useEffect (() => {
-    setLoading(true);
-    getProductById (id)     
-    .then((res) => { 
-       setProducts(res);
-    })
-    .catch((err) =>{
-        console.log(err);
-    })
-    .finally(() =>{ 
-        setLoading(false);
-    });
+        setLoading(true);
+        getProductById (id)     
+        .then((res) => { 
+        setProducts(res);
+        })
+        .catch((err) =>{
+            console.log(err);
+        })
+        .finally(() =>{ 
+            setLoading(false);
+        });
    
 },[id]);    
    
@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
     <div >ItemDetailContainer</div>;
 {loading
    ? <Spinner/> 
-   : <ItemDetail products={products}/> }
+   : <ItemDetail {...products}/> }
   
 </main> 
     )

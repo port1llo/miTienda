@@ -1,7 +1,10 @@
 import { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
+const ItemCount = ({stock, initial, handleOnBuy }) => {
+    const navigate = useNavigate();
 
-const ItemCount = ({stock, initial }) => {
-
+    const [itemAdded, setItemAdded] = useState(false);
     const [qty, setQty] = useState(initial);
    
     const handleCLick = (op) => {
@@ -25,15 +28,37 @@ const ItemCount = ({stock, initial }) => {
         setQty (qty + 1);
     };
 
+const handleAddToCart = () => {
+    handleOnBuy (qty)
+    setItemAdded(true)
+}
 
+const handleGoTCheckout = () =>{
+setItemAdded(false)
+    navigate("/cart")
 
+}
     return (
-        <div>
-            <button onClick={() =>handleCLick ("-")}>-</button>
-            <span>{qty}</span>
-            <button onClick={() => handleCLick("+")}>+</button>
-            <h1>Item Count</h1>
-        </div>
+        <>
+            
+             {itemAdded ? (
+                <Button variant="primary" onClick={handleGoTCheckout}>Checkout</Button>
+             
+            ) : (
+                <>
+                <div>
+                    <button onClick={() =>handleCLick ("-")}>-</button>
+                    <span>{qty}</span>
+                    <button onClick={() => handleCLick("+")}>+</button>
+                    <h1>Item Count</h1>
+                </div>
+                <Button variant="primary" onClick={handleAddToCart}>Add to Cart</Button>
+             </>
+             )}
+
+          
+        </>
+        
     );
 };
 export default ItemCount;
