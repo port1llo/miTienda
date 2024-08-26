@@ -2,7 +2,8 @@ import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 import styles from"./ItemListContainer.module.css";
 import { useState, useEffect } from "react";
-import { getProducts } from "../utils/fetchData";
+import{db} from "../../firebase/dbConnection";
+import {collection, getDocs, query, where} from "firebase/firestore";
 import {useParams} from "react-router-dom";
 import { Spinner } from "../spinner/spinner";
 import {useCartContext} from "../../context/CartContext"
@@ -17,31 +18,49 @@ const ItemListContainer =({title}) => {
     let titleToShow = titulo;
 
     useEffect(() =>{
-    console.log("Se monto el componente");
-    setLoading(true);
-    getProducts (categoryId) 
-    .then((res) => { 
-        console.log("se ejecuto la promesa");
-        setProducts(res);
-    })
-    .catch((err) =>{
-        console.log(err);
-    })
-    .finally(() =>{ 
-        console.log("finalizo la promesa");
-        setLoading(false);
-    });
-   
-},[categoryId]);    
+       setLoading(true);
+        let producstCollection = collection(db, "productos")
+       
+        if (categoryId) {
+            producstCollection = query (productsCollection), where ("category", "array-contains", categoryId);
+            } 
+                getDocs(producstCollection)
+                .then (({docs})=>{
+                 const prodFromDocs = docs.map((doc) => ({
+                     id: doc.id,
+                     ...doc.data()
+                 }))
+                 setProducts(prodFromDocs)
+                 setLoading(false);
+                })
+                .catch((error) => {
+                 console.log("ERROR", error);
+                });
+
+        } else{
+            getDocs(productsCollection)
+                .then (({docs})=>{
+                 const prodFromDocs = docs.map((doc) => ({
+                     id: doc.id,
+                     ...doc.data()
+                 }))
+                 setProducts(prodFromDocs)
+                 setLoading(false);
+                })
+                .catch((error) => {
+                 console.log("ERROR", error);
+                });
+
+        }
+
+      
+  },[categoryId]);    
    
    
     return (
        
         <>
-             {/*   <button onClick={() => setCat("interior")}>Set Cat = Interior</button>
-                <button onClick={() => setCat("exterior")}>Set Cat = Exterior</button>
-                <button onClick={() => setCat("invierno")}>Set Cat = Invierno</button>
-                <button onClick={() => setCat("verano")}>Set Cat = Verano</button> */}
+            
         <div className= {styles.container} >
         <div >{titleToShow}</div>;
         {loading

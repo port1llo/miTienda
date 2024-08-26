@@ -47,9 +47,29 @@ if( isInCart(item.id)){
         setCart (newCart)
         localStorage.setItem('cart', JSON.stringify(newCart))
         localStorage.setItem('total', JSON.stringify(total))
+        localStorage.setItem('qty', JSON.stringify(qty))
     }
-const removeItem =() => {}
-const clearCart =( )=> {}
+const removeItem =(id, price, qty) => {
+    setTotal(total- price * qty);
+    setQtyItems(qtyItems - qty);
+
+    const newCart = cart.filter((elem) => elem.id !==id);
+
+    setCart(newCart);
+    localStorage.setItem('cart', JSON.stringify(newCart))
+    localStorage.setItem('total', JSON.stringify(total))
+    localStorage.setItem('qty', JSON.stringify(qty))
+
+}
+
+const clearCart =( )=> {
+    setCart([])
+    setTotal(0)
+    setQtyItems(0)
+    localStorage.removeItem('cart')    
+    localStorage.removeItem('total')
+}
+
 
     const contextValue = {
     titulo: "Lengua de Suegra",
