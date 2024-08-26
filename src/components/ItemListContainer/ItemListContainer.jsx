@@ -6,25 +6,24 @@ import{db} from "../../firebase/dbConnection";
 import {collection, getDocs, query, where} from "firebase/firestore";
 import {useParams} from "react-router-dom";
 import { Spinner } from "../spinner/spinner";
-import {useCartContext} from "../../context/CartContext"
+import {useCartContext} from "../../context/CartContext";
 
-const ItemListContainer =({title}) => {
+const ItemListContainer =() => {
     const [products, setProducts] = useState([]);
-    
     const {categoryId} = useParams();
     const [loading, setLoading] = useState(true);
     const {titulo} = useCartContext ();
 
     let titleToShow = titulo;
 
-    useEffect(() =>{
+    useEffect(() => {
        setLoading(true);
-        let producstCollection = collection(db, "productos")
+        let productsCollection = collection(db, "productos")
        
         if (categoryId) {
-            producstCollection = query (productsCollection), where ("category", "array-contains", categoryId);
+            productsCollection = query (productsCollection, where ("category", "array-contains", categoryId));
             } 
-                getDocs(producstCollection)
+                getDocs(productsCollection)
                 .then (({docs})=>{
                  const prodFromDocs = docs.map((doc) => ({
                      id: doc.id,
@@ -37,39 +36,19 @@ const ItemListContainer =({title}) => {
                  console.log("ERROR", error);
                 });
 
-        } else{
-            getDocs(productsCollection)
-                .then (({docs})=>{
-                 const prodFromDocs = docs.map((doc) => ({
-                     id: doc.id,
-                     ...doc.data()
-                 }))
-                 setProducts(prodFromDocs)
-                 setLoading(false);
-                })
-                .catch((error) => {
-                 console.log("ERROR", error);
-                });
-
-        }
-
-      
-  },[categoryId]);    
+        }       
+,[categoryId])   
    
    
     return (
-       
-        <>
-            
+       <>
         <div className= {styles.container} >
-        <div >{titleToShow}</div>;
-        {loading
-            ? <Spinner/> 
-            : <ItemList products={products}/> }
-        <ItemCount/>
+            <div >{titleToShow}</div>;
+            {loading
+                ? <Spinner/> 
+                : <ItemList products={products}/> }
             </div>
         </> 
     );
-
 };
 export default ItemListContainer;

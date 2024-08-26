@@ -10,18 +10,18 @@ const Navbar = ({ title}) => {
   
     return(
         <>
-        <div>
-        <h1>{title}</h1>
-        <Link to="/"> 
-            <img src={logo} alt="" className="logo" />
-        </Link>
-        </div>
-        <div className="navItems"> 
-        {categories.map((element, id) => {
-            return  <Navbarlink key={id} category={element}/>;
-        })};
-      </div>
-        <Cartwidget/>
+            <div>
+                <h1>{title}</h1>
+                <Link to="/"> 
+                    <img src={logo} alt="" className="logo" />
+                </Link>
+            </div>
+            <div className="navItems"> 
+                {categories.map((element, id) => {
+                    return  <Navbarlink key={id} category={element}/>;
+                })};
+            </div>
+            <Cartwidget/>
         </>
     )
 };

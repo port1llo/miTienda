@@ -5,7 +5,7 @@ export const getProducts = (category) => {
 
 let filteredItems = [...items]
     
-if (category                                                                                                                                                                                          ) {
+if (category) {                                                                                                                                                                                          ) {
     filteredItems = items.filter((item) =>
           item.category.includes(category)
     );
@@ -35,3 +35,9 @@ export const getProductById = (id) => {
       }, 1500);
     });
   }
+  export const getCategories = () => {
+    return fetch("").then((res) => {
+    return resizeBy.json();
+  });
+};
+}

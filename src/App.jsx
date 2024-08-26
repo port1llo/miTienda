@@ -11,25 +11,23 @@ import CartContextProvider from "./context/CartContext.jsx";
 import Cart from "./components/Cart/Cart.jsx"
 
 function App() {
-  const title = "Lengua de Suegra";
-  return (
+   return (
     <CartContextProvider>
-    <BrowserRouter>
-      {/*<Navbar categories ={categories} title="Lengua de Suegra"/>*/}
-      <Layout>
-          <Routes>
-              <Route path="/" element={<ItemListContainer/>}/>  
-              <Route path="/vivero/:categoryId" element={<ItemListContainer/>}/>
-              <Route path="/product/:id" element={<ItemDetailContainer/>}/>
-              <Route path="/contact" element={<Contact/>}/>
-              <Route path="/about" element={<AboutUs/>}/>
-              <Route path="*" element={<Error404/>}/>
-              <Route path="/cart" element={<Cart/>}/>                            
-          </Routes>  
-      </Layout>  
-      </BrowserRouter>
+      <BrowserRouter>
+        <Layout>
+            <Routes>
+                <Route path="/" element={<ItemListContainer/>}/>  
+                <Route path="/vivero/:categoryId" element={<ItemListContainer/>}/>
+                <Route path="/product/:id" element={<ItemDetailContainer/>}/>
+                <Route path="/contact" element={<Contact/>}/>
+                <Route path="/about" element={<AboutUs/>}/>
+                <Route path="*" element={<Error404/>}/>
+                <Route path="/cart" element={<Cart/>}/>                            
+            </Routes>  
+        </Layout>  
+        </BrowserRouter>
     </CartContextProvider>
   );
 }
 
-export default App
+export default App;

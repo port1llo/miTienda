@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useCartContext } from "../../context/CartContext"
 import { Button, Table } from "react-bootstrap";
 import {db} from "../../firebase/dbConnection"
-import { addDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 const Cart = () => {
     const{ cart, total, removeItem, clearCart} = useCartContext();
     const [formData, setFormData] = useState({name:"", tel:"", mail:""})
@@ -10,7 +10,7 @@ const Cart = () => {
         removeItem (id, price, qty);
     };
     
-    const handleClaerCart = () => {
+    const handleClearCart = () => {
         clearCart();
     };
 
@@ -27,29 +27,29 @@ const Cart = () => {
    //     setFormData({...formData, mail: e.target.value})
    // }
 
-    function handleSaveCart = ()=> {
+    const handleSaveCart = ( ) => {
         console.log("Saving in database")
         console.log("formData", formData)
-        console.log("cart",cart)
+        console.log("cart", cart)
 
-        const ordersCollection =collection (db, "orders")
+        const ordersCollection = collection (db, "orders")
         const newOrder = {
             buyer: formData,
             items: cart,
             date: new Date(),
             total: total
         }
+
         addDoc(ordersCollection, newOrder)
         .then((doc)=>{
             alert("Order saved with id: " + doc.id)
             console.log("Order saved with id: " + doc.id)
-        clearCart();
-        setFormData ({name:"", tel:"", email:""})
+            clearCart();
+            setFormData ({name:"", tel:"", email:""})
         })
         .catch((error) =>{
             console.error("error adding document: ", error)
-        }
-        )
+        })
     }
 
     return (
@@ -87,11 +87,11 @@ const Cart = () => {
                 </tr>
             </tbody>
         </Table>
-<button onClick={handleClaerCart}>Clear Cart</button>
+<button onClick={handleClearCart}>Clear Cart</button>
 
-<input type="text" name="name" id="Nombre" onChange={(e)=>handleNameChange(e)} />
-<input type="number" name="tel" id="Teleono" onChange={(e)=>handleTelChange(e)}/>
-<input type="email" name="email" id="Ingrese email"onChange={(e)=>handleMailChange(e)}/>
+<input type="text" name="name" id="Nombre" onChange={(e)=>handleOnChange(e)} />
+<input type="number" name="tel" id="Teleono" onChange={(e)=>handleOnChange(e)}/>
+<input type="email" name="email" id="Ingrese email"onChange={(e)=>handleOnChange (e)}/>
 <button onClick={handleSaveCart}>Finalizar Compra</button>  
         </>
     )

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
+
 const ItemCount = ({stock, initial, handleOnBuy }) => {
     const navigate = useNavigate();
-
-    const [itemAdded, setItemAdded] = useState(false);
     const [qty, setQty] = useState(initial);
+    const [itemAdded, setItemAdded] = useState(false);
+    
    
     const handleCLick = (op) => {
        
@@ -23,7 +24,7 @@ const ItemCount = ({stock, initial, handleOnBuy }) => {
     const clickMas = () => {
         if (qty === stock) {
             alert("No hay mas stock");
-        return
+        return;
         }
         setQty (qty + 1);
     };
@@ -50,7 +51,6 @@ setItemAdded(false)
                     <button onClick={() =>handleCLick ("-")}>-</button>
                     <span>{qty}</span>
                     <button onClick={() => handleCLick("+")}>+</button>
-                    <h1>Item Count</h1>
                 </div>
                 <Button variant="primary" onClick={handleAddToCart}>Add to Cart</Button>
              </>

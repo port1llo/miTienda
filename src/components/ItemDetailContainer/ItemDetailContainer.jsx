@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { db } from "../../firebase/dbConnection";
 import { Spinner } from "../spinner/spinner";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import {collection, getDoc, doc} from "../../firebase/dbConnection"
+import {collection, getDoc, doc} from "firebase/firestore";
 
 
 const ItemDetailContainer = () => {
@@ -24,7 +24,8 @@ const ItemDetailContainer = () => {
                 setLoading(false);
             })        
             .catch((error) =>{
-                console.log (ERROR, error);
+                setLoading(false);
+                console.log (Error, error);
             }); 
     },[id]);    
    
@@ -32,12 +33,12 @@ const ItemDetailContainer = () => {
    return (
     <main>
    
-    <div >ItemDetailContainer</div>;
-{loading
-   ? <Spinner/> 
-   : <ItemDetail {...products}/> }
-  
-</main> 
+        <div >ItemDetailContainer</div>
+        {loading
+            ? <Spinner/> 
+            : <ItemDetail {...products}/> }
+    
+    </main> 
     )
 }
 export default ItemDetailContainer;
