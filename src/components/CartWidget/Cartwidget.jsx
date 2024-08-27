@@ -1,8 +1,10 @@
     import { useCartContext } from "../../context/CartContext";
+   import styles from "./CartWidget.module.css";
+   
     const Cartwidget = ()=> {
         const {qtyItems} = useCartContext();
         return (
-            <div> 
+            <div className={styles.cartWidget}> 
                 <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     width="16" 

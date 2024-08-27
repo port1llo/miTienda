@@ -3,6 +3,8 @@ import { useCartContext } from "../../context/CartContext"
 import { Button, Table } from "react-bootstrap";
 import {db} from "../../firebase/dbConnection"
 import { addDoc, collection } from "firebase/firestore";
+import styles from "./cart.module.css";
+
 const Cart = () => {
     const{ cart, total, removeItem, clearCart} = useCartContext();
     const [formData, setFormData] = useState({name:"", tel:"", mail:""})
@@ -17,17 +19,7 @@ const Cart = () => {
     const handleOnChange = (e) => {
         setFormData({...formData,[e.target.name]:e.target.value})
     }
-   // function handleNameChange(e){
-   //     setFormData({...formData, name: e.target.value})
-   // } 
-   // function handleTelChange(e){
-   //     setFormData({...formData, tel: e.target.value})
-   // }
-   // function handleMailChange(e){
-   //     setFormData({...formData, mail: e.target.value})
-   // }
-
-    const handleSaveCart = ( ) => {
+      const handleSaveCart = ( ) => {
         console.log("Saving in database")
         console.log("formData", formData)
         console.log("cart", cart)
@@ -89,10 +81,21 @@ const Cart = () => {
         </Table>
 <button onClick={handleClearCart}>Clear Cart</button>
 
-<input type="text" name="name" id="Nombre" onChange={(e)=>handleOnChange(e)} />
-<input type="number" name="tel" id="Teleono" onChange={(e)=>handleOnChange(e)}/>
-<input type="email" name="email" id="Ingrese email"onChange={(e)=>handleOnChange (e)}/>
-<button onClick={handleSaveCart}>Finalizar Compra</button>  
+    <div className="div-form">
+    <div className="mb-3">
+    <label for="formGroupExampleInput" className="form-label">Ingrese su nombre </label>
+    <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Ingrese su nombre" onChange={(e)=>handleOnChange(e)}/>
+    </div>
+    <div className="mb-3">
+    <label for= "formGroupExampleInput2" className="form-label"></label>
+    <input type="num" className="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Tel"onChange={(e)=>handleOnChange(e)}/>
+    </div>
+    <div className="mb-3">
+    <label for="formGroupExampleInput2" className="form-label">Ingrese su emial</label>
+    <input type="email" className="form-control" id="formGroupExampleInput2" placeholder="Verdequetequiero@LenguaDeSuegra.com"onChange={(e)=>handleOnChange (e)}/>
+    </div>
+</div>
+<button onClick={handleSaveCart} className= {styles.container}>Finalizar Compra</button>  
         </>
     )
 }

@@ -16,8 +16,6 @@ const ItemDetailContainer = () => {
         const productCollection = collection(db, "productos");
         const refDoc = doc(productCollection, id)
 
-
-
         getDoc (refDoc)
             .then((doc)=>{
                 setProduct({id: doc.id, ...doc.data()})

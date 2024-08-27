@@ -8,7 +8,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["interior","invierno"],
-    /*image: "#",*/
+    image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/ljqz7d2upqgkluo4akol.jpg",
 },
 
 {
@@ -17,7 +17,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["interior"],
-   /*image: "#",*/
+    image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/x2aprziwf2v3rvqqe54a.jpg",
 },
 {
     name: "Aloe Vera",
@@ -25,7 +25,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["interior","verano"],
-   /*image: "#",*/
+    image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/w9qijphk1e3e41db8ek3.jpg",
 },
 {
     name: "Palo de Agua (Dracaena fragrans)",
@@ -33,7 +33,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["interior"],
-    /*image: "#",*/
+    image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/rfyhtixqp7eopszkuswy.jpg",
 },
 {
     name: "Mora (Morus)",
@@ -41,7 +41,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["exterior","verano"],
-    /*image: "#",*/
+    image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/pbqztzmg3gwpqekqdw3t.jpg",
 },
 {
     name: "Limonero (Citrus limon)",
@@ -49,7 +49,7 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["exterior","verano"],
-  /*image: "#",*/
+    image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795559/Plantas/mwltdcdvfrdspucyk0jj.jpg",
 },
 {
     name: "Romero (Rosmarinus officinalis)",
@@ -57,6 +57,6 @@ export const items = [
     price: 3.5,
     stock: 10,
     category: ["exterior","invierno"],
-  /*image: "#",*/
+    image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/yasi7c2h2foioplgmdue.jpg",
 },
 ];

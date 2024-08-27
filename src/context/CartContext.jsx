@@ -15,7 +15,7 @@ useEffect(()=>{
     const localTotal = JSON.parse(localStorage.getItem('total'))
     const localQty = JSON.parse(localStorage.getItem('qty'))
     
-    if (localCart && localTotal &&localQty){
+    if (localCart && localTotal && localQty){
         setCart(localCart)
         setTotal (localTotal)
         setQtyItems(localQty)
@@ -62,7 +62,7 @@ const removeItem =(id, price, qty) => {
 
 }
 
-const clearCart =( )=> {
+const clearCart =()=> {
     setCart([])
     setTotal(0)
     setQtyItems(0)
@@ -72,10 +72,13 @@ const clearCart =( )=> {
 
 
     const contextValue = {
-    titulo: "Lengua de Suegra",
-    qtyItems: qtyItems,
-    setQtyItems: setQtyItems,
+    titulo: "Para todo el año, el hogar, el jardín",
+    qtyItems,
+    total,
+    cart,
     addToCart,
+    clearCart,
+    removeItem
 }
     return <Provider value={contextValue}>{children}  </Provider>
 }

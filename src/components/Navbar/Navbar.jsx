@@ -5,16 +5,17 @@ import logo from "../../assets/logo.png"
 import { categories } from "../mock/mockData";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ title}) => {
-
+const Navbar = () => {
+   
   
     return(
         <>
-            <div>
-                <h1>{title}</h1>
+            <div className="titulonav">
                 <Link to="/"> 
-                    <img src={logo} alt="" className="logo" />
+                    <img src={logo} alt="" className= "logo"    />
+                    <h1 className="=titulonav-1">Lengua de Suegra</h1>
                 </Link>
+                
             </div>
             <div className="navItems"> 
                 {categories.map((element, id) => {

@@ -8,9 +8,10 @@ import {useParams} from "react-router-dom";
 import { Spinner } from "../spinner/spinner";
 import {useCartContext} from "../../context/CartContext";
 
-const ItemListContainer =() => {
+
+const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
-    const {categoryId} = useParams();
+    const { categoryId } = useParams();
     const [loading, setLoading] = useState(true);
     const {titulo} = useCartContext ();
 
@@ -18,13 +19,14 @@ const ItemListContainer =() => {
 
     useEffect(() => {
        setLoading(true);
+       
         let productsCollection = collection(db, "productos")
        
         if (categoryId) {
             productsCollection = query (productsCollection, where ("category", "array-contains", categoryId));
             } 
                 getDocs(productsCollection)
-                .then (({docs})=>{
+                .then (({docs})=> {
                  const prodFromDocs = docs.map((doc) => ({
                      id: doc.id,
                      ...doc.data()
@@ -36,14 +38,13 @@ const ItemListContainer =() => {
                  console.log("ERROR", error);
                 });
 
-        }       
-,[categoryId])   
+        }, [categoryId]);   
    
    
     return (
        <>
         <div className= {styles.container} >
-            <div >{titleToShow}</div>;
+            <div >{titleToShow}</div>
             {loading
                 ? <Spinner/> 
                 : <ItemList products={products}/> }

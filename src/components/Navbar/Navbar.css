@@ -1,23 +1,46 @@
 .navItems {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:space-around;
     width: 100%;
-    padding: 0 20px;
+    padding: 20px;
     background-color: transparent;
 }
 .navItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
     background-color: rgba(0, 183, 255, 0.768);
+    border-radius: 5px;
     
 }
 
 .logo{
-    width: 200px;
+   width: 200px;
+   position: static;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .active{
     color:lime;
+}
+
+.titulonav{
+    color: lime;
+    display: flex;
+    
+    justify-content: space-between;
+}
+
+.titulonav-1{
+    text-decoration: none;
+ 
 }

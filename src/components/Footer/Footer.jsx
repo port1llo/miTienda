@@ -1,14 +1,14 @@
 import {items} from "../mock/mockData";
 import {db} from "../../firebase/dbConnection";
 import { collection, addDoc } from "firebase/firestore";
-import { useEffect } from "react";
+import styles from "./footer.module.css";
 
 const Footer = () => {
     const addProducts = () =>{
-        const producstCollection = collection (db, "productos");
+        const productsCollection = collection (db, "productos");
    
         items.forEach((item)=>{
-         addDoc(producstCollection, item)
+         addDoc(productsCollection, item)
         .then(doc=>{
         console.log("Prodcuto agregado con ID: ",doc.id)
         })
@@ -18,7 +18,7 @@ const Footer = () => {
     }
     
     return (
-        <footer>
+        <footer className= {styles.container}>
             <button onClick={addProducts}>agregar prodcutos a base de datos</button>
         </footer>);
         
