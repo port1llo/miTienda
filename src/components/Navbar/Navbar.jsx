@@ -9,14 +9,16 @@ const Navbar = () => {
    
   
     return(
-        <>
-            <div className="titulonav">
+       <>
+        <nav className="navbar bg-light">
+            <div className="container-fluid">
                 <Link to="/"> 
-                    <img src={logo} alt="" className= "logo"    />
-                    <h1 className="=titulonav-1">Lengua de Suegra</h1>
+                    <img src={logo} alt="" className= "logo"  width="50" height="50" className="d-inline-block align-text-top"  />
+                    Lengua de Suegra
                 </Link>
-                
             </div>
+        </nav>
+           
             <div className="navItems"> 
                 {categories.map((element, id) => {
                     return  <Navbarlink key={id} category={element}/>;

@@ -46,7 +46,8 @@ const Cart = () => {
 
     return (
         <>
-        <Table className="table table-striped">
+       
+        <Table className= {`${styles.tablelp} table-striped`}>
             <thead>
                 <tr>
                 <th scope="col">#</th>
@@ -77,25 +78,30 @@ const Cart = () => {
                     <th colSpan={4}>Total Price</th>
                     <td>$ {total}</td>
                 </tr>
+                <Button onClick={handleClearCart}>Clear Cart</Button>
             </tbody>
+           
         </Table>
-<button onClick={handleClearCart}>Clear Cart</button>
 
-    <div className="div-form">
-    <div className="mb-3">
-    <label for="formGroupExampleInput" className="form-label">Ingrese su nombre </label>
-    <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Ingrese su nombre" onChange={(e)=>handleOnChange(e)}/>
-    </div>
-    <div className="mb-3">
-    <label for= "formGroupExampleInput2" className="form-label"></label>
-    <input type="num" className="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Tel"onChange={(e)=>handleOnChange(e)}/>
-    </div>
-    <div className="mb-3">
-    <label for="formGroupExampleInput2" className="form-label">Ingrese su emial</label>
-    <input type="email" className="form-control" id="formGroupExampleInput2" placeholder="Verdequetequiero@LenguaDeSuegra.com"onChange={(e)=>handleOnChange (e)}/>
-    </div>
+<div className= {styles.container} >
+        <div>
+            <div className="card-header">
+            <label for="formGroupExampleInput" className="form-label">Ingrese su nombre </label>
+            <input type="text" className="form-control" id="formGroupExampleInput" placeholder=" ej: Sapo Pepe" onChange={(e)=>handleOnChange(e)}/>
+            </div>
+            <div className="card-header">
+            <label for= "formGroupExampleInput2" className="form-label">Ingrese su numero de telefono</label>
+            <input type="num" className="form-control" id="formGroupExampleInput2" placeholder=" ej: 03034546"onChange={(e)=>handleOnChange(e)}/>
+            </div>
+            <div className="card-header">
+            <label for="formGroupExampleInput2" className="form-label">Ingrese su email</label>
+            <input type="email" className="form-control" id="formGroupExampleInput2" placeholder=" ej: Verdequetequiero@LenguaDeSuegra.com"onChange={(e)=>handleOnChange (e)}/>
+            </div>
+       
+            <Button  onClick={handleSaveCart} >Finalizar Compra</Button> 
+         </div>
+          
 </div>
-<button onClick={handleSaveCart} className= {styles.container}>Finalizar Compra</button>  
         </>
     )
 }

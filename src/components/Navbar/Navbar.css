@@ -25,7 +25,7 @@
     text-decoration: none;
     font-size: 2rem;
     background-color: var(--azul-polvo);
-    color: var(--marron-tierra);
+    color:#20725f;
     border-radius: 5px;
     font-weight: bold; /* Negrita para destacar el texto */
     /*font-size: 1.1rem;  Tamaño de fuente */
@@ -47,7 +47,7 @@
 
 .titulonav{
     display: flex;
-    color: var(--marron-tierra);
+    color: #20725f;
 }
 .active{
     background-color: var(--rosa-palido);
@@ -55,7 +55,7 @@
 
 .button {
     background-color: var(--azul-polvo);
-    color: var(--marron-tierra);
+    color: #20725f;
   }
   
   .button:hover {
