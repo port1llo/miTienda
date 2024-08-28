@@ -12,9 +12,9 @@ import Cart from "./components/Cart/Cart.jsx"
 
 function App() {
    return (
-    <CartContextProvider>
+    <CartContextProvider >
       <BrowserRouter>
-        <Layout>
+        <Layout >
             <Routes>
                 <Route path="/" element={<ItemListContainer/>}/>  
                 <Route path="/vivero/:categoryId" element={<ItemListContainer/>}/>

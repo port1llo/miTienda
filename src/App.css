@@ -6,3 +6,8 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px
 );
+
+.container {
+  background-color: var(--crema-suave);
+  color: var(--marron-tierra);
+}

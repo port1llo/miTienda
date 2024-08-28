@@ -1,5 +1,5 @@
 export const categories = [ 
-    "interior", "exterior", "invierno", "verano"];
+    "Interior", "Exterior", "Invierno", "Verano"];
 
 export const items = [
 {
@@ -7,7 +7,7 @@ export const items = [
     description: "Es una planta de interior popular por su resistencia y fácil cuidado. Tiene hojas largas, verticales y puntiagudas que suelen ser de color verde oscuro con bordes amarillos.",
     price: 3.5,
     stock: 10,
-    category: ["interior","invierno"],
+    category: ["Interior","Invierno"],
     image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/ljqz7d2upqgkluo4akol.jpg",
 },
 
@@ -16,7 +16,7 @@ export const items = [
     description: "Es una planta trepadora de interior, muy apreciada por sus hojas en forma de corazón y su capacidad para purificar el aire. Es fácil de cuidar y puede crecer en diversas condiciones de luz.",
     price: 3.5,
     stock: 10,
-    category: ["interior"],
+    category: ["Interior"],
     image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/x2aprziwf2v3rvqqe54a.jpg",
 },
 {
@@ -24,7 +24,7 @@ export const items = [
     description: "Conocida por sus propiedades medicinales, el Aloe Vera tiene hojas carnosas que contienen un gel utilizado para tratar quemaduras y heridas. Es una planta resistente que necesita poca agua y mucha luz solar.",
     price: 3.5,
     stock: 10,
-    category: ["interior","verano"],
+    category: ["Interior","Verano"],
     image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/w9qijphk1e3e41db8ek3.jpg",
 },
 {
@@ -32,7 +32,7 @@ export const items = [
     description: "ambién llamada <Dracaena>, es una planta de interior popular por sus hojas largas y verdes con rayas amarillas. Es ideal para interiores ya que tolera bien la baja luz.",
     price: 3.5,
     stock: 10,
-    category: ["interior"],
+    category: ["Interior"],
     image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/rfyhtixqp7eopszkuswy.jpg",
 },
 {
@@ -40,7 +40,7 @@ export const items = [
     description: "Es un árbol o arbusto frutal que produce moras comestibles. Aunque es más común en exteriores, algunas variedades se cultivan en macetas para interiores.",
     price: 3.5,
     stock: 10,
-    category: ["exterior","verano"],
+    category: ["Exterior","Verano"],
     image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/pbqztzmg3gwpqekqdw3t.jpg",
 },
 {
@@ -48,7 +48,7 @@ export const items = [
     description: "Un pequeño árbol frutal que produce limones. Es popular tanto en jardines como en interiores, siempre y cuando reciba suficiente luz solar.",
     price: 3.5,
     stock: 10,
-    category: ["exterior","verano"],
+    category: ["Exterior","Verano"],
     image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795559/Plantas/mwltdcdvfrdspucyk0jj.jpg",
 },
 {
@@ -56,7 +56,7 @@ export const items = [
     description: "Es una planta aromática y medicinal con hojas estrechas y perfumadas, utilizada comúnmente en la cocina. Puede crecer tanto en interiores como en exteriores, preferentemente con mucha luz.",
     price: 3.5,
     stock: 10,
-    category: ["exterior","invierno"],
+    category: ["Exterior","Invierno"],
     image: "https://res.cloudinary.com/daotqz2xl/image/upload/v1724795558/Plantas/yasi7c2h2foioplgmdue.jpg",
 },
 ];

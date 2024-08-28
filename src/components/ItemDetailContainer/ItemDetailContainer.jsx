@@ -4,6 +4,7 @@ import { db } from "../../firebase/dbConnection";
 import { Spinner } from "../spinner/spinner";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import {collection, getDoc, doc} from "firebase/firestore";
+import styles from "./ItemDetailContainer.module.css"
 
 
 const ItemDetailContainer = () => {
@@ -29,9 +30,9 @@ const ItemDetailContainer = () => {
    
 
    return (
-    <main>
+    <main className= {styles.container} >
    
-        <div >ItemDetailContainer</div>
+        {/*<div >ItemDetailContainer</div>*/}
         {loading
             ? <Spinner/> 
             : <ItemDetail {...products}/> }
