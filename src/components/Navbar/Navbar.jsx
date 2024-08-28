@@ -13,7 +13,7 @@ const Navbar = () => {
         <nav className="navbar bg-light">
             <div className="container-fluid">
                 <Link to="/"> 
-                    <img src={logo} alt="" className= "logo"  width="50" height="50" className="d-inline-block align-text-top"  />
+                    <img src={logo} alt="" className={ `${logo} d-inline-block align-text-top`}  width="50" height="50" />
                     Lengua de Suegra
                 </Link>
             </div>
